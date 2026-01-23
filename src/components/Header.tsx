@@ -25,7 +25,7 @@ export function Header() {
             </div>
             <div className="hidden sm:block">
               <p className="font-semibold text-foreground">Waste Route Manager</p>
-              <p className="text-xs text-muted-foreground">System dla JST</p>
+              <p className="text-xs text-muted-foreground">System dla samorządów</p>
             </div>
           </a>
 

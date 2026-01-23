@@ -55,7 +55,7 @@ const allFeatures = [
   {
     icon: Settings,
     title: "Integracje i eksporty",
-    description: "CSV, XLSX, integracje z systemami JST oraz wsparcie API.",
+    description: "CSV, XLSX, integracje z systemami urzędowymi oraz wsparcie API.",
   },
 ];
 
