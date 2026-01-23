@@ -184,7 +184,7 @@ export function Dashboard() {
           className="mt-8 p-6 rounded-2xl bg-hero-gradient text-primary-foreground text-center"
         >
           <p className="text-lg font-medium">
-            💡 Możemy przygotować makiety na danych z Twojej gminy i pokazać je w trakcie spotkania.
+            💡 Możemy przygotować makiety na Waszych danych i pokazać je w trakcie spotkania.
           </p>
         </motion.div>
       </div>

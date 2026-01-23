@@ -26,7 +26,7 @@ export function Footer() {
               <span className="font-semibold">Waste Route Manager</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Nowoczesne narzędzie dla samorządów.
+              Kontrola i analityka gospodarki odpadami.
             </p>
           </div>
 

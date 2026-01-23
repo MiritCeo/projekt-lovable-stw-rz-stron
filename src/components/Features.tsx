@@ -58,8 +58,8 @@ export function Features() {
             Funkcje, które już działają w naszej aplikacji
           </h2>
           <p className="text-lg text-muted-foreground">
-            Moduły są zaprojektowane specjalnie dla JST. Działają zarówno na
-            komputerach, jak i tabletach w terenie.
+            Moduły są zaprojektowane dla przedsiębiorstw komunalnych i samorządów. 
+            Działają zarówno na komputerach, jak i tabletach w terenie.
           </p>
         </motion.div>
 

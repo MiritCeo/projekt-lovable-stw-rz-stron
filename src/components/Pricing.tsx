@@ -12,7 +12,7 @@ interface Feature {
 const plans = [
   {
     name: "Standardowy",
-    description: "Gotowe rozwiązanie dla typowych potrzeb JST",
+    description: "Gotowe rozwiązanie dla przedsiębiorstw komunalnych",
     icon: Zap,
     popular: false,
     features: [
@@ -36,7 +36,7 @@ const plans = [
       { name: "Wszystko z planu Standardowego", description: "Pełen zakres funkcjonalności z planu Standardowego jako baza do rozbudowy." },
       { name: "Dostosowanie interfejsu i workflow", description: "Modyfikacja wyglądu i przepływów pracy zgodnie z wewnętrznymi procedurami gminy." },
       { name: "Zaawansowana analityka i wykrywanie anomalii", description: "Szczegółowe raporty o nadwyżkach kosztów, nieprawidłowościach w deklaracjach, porzuconych odpadach z innych gmin." },
-      { name: "Integracje z systemami JST", description: "Połączenie z systemami księgowymi, eBOK, ePUAP i innymi używanymi w urzędzie." },
+      { name: "Integracje z systemami urzędowymi", description: "Połączenie z systemami księgowymi, eBOK, ePUAP i innymi używanymi w urzędzie." },
       { name: "Dedykowane szkolenia dla zespołu", description: "Szkolenia on-site lub online dla administratorów, pracowników biurowych i ekip terenowych." },
       { name: "Priorytetowe wsparcie techniczne", description: "Skrócony czas reakcji na zgłoszenia i dedykowany opiekun klienta." },
       { name: "Konsultacje wdrożeniowe", description: "Analiza procesów i doradztwo w optymalizacji gospodarki odpadami przed wdrożeniem." },

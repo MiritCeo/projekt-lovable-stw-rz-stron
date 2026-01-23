@@ -117,11 +117,11 @@ export function Contact() {
 
               <div className="space-y-4">
                 <div>
-                  <Label htmlFor="unit">Jednostka samorządu</Label>
+                  <Label htmlFor="unit">Nazwa organizacji</Label>
                   <Input
                     id="unit"
                     name="unit"
-                    placeholder="np. Gmina Pleszew"
+                    placeholder="np. ZGK Pleszew, Gmina Kalisz"
                     required
                     className="mt-1.5"
                   />
@@ -166,7 +166,7 @@ export function Contact() {
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Opisz krótko potrzeby gminy..."
+                    placeholder="Opisz krótko potrzeby organizacji..."
                     rows={4}
                     className="mt-1.5"
                   />
