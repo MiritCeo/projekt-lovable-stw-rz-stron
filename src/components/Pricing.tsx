@@ -19,7 +19,7 @@ const plans = [
       { name: "Ewidencja nieruchomości i pojemników", description: "Kompletna baza danych nieruchomości z przypisanymi pojemnikami, statusami deklaracji i historią zmian." },
       { name: "Harmonogramy odbiorów", description: "Definiowanie cyklicznych terminów odbioru odpadów z uwzględnieniem frakcji i wyjątków (święta, zmiany)." },
       { name: "Planowanie tras", description: "Automatyczne tworzenie optymalnych tras dla pojazdów z uwzględnieniem pojemności i lokalizacji." },
-      { name: "Raporty i eksporty CSV/XLSX", description: "Gotowe szablony raportów do sprawozdawczości oraz eksport danych w popularnych formatach." },
+      { name: "Raporty i analityka odpadów", description: "Statystyki zbiórki, wykrywanie anomalii na trasach, kontrola kosztów segregacji i identyfikacja nieprawidłowości." },
       { name: "Panel administratora", description: "Centralny kokpit z podglądem kluczowych wskaźników, alertów i statusów realizacji." },
       { name: "Aplikacja mobilna dla pracowników", description: "Dedykowana aplikacja na tablet/telefon do potwierdzania odbiorów i zgłaszania uwag w terenie." },
       { name: "Import danych z Radix", description: "Automatyczne mapowanie i import danych z popularnego systemu Radix używanego przez wiele gmin." },
@@ -35,7 +35,7 @@ const plans = [
     features: [
       { name: "Wszystko z planu Standardowego", description: "Pełen zakres funkcjonalności z planu Standardowego jako baza do rozbudowy." },
       { name: "Dostosowanie interfejsu i workflow", description: "Modyfikacja wyglądu i przepływów pracy zgodnie z wewnętrznymi procedurami gminy." },
-      { name: "Niestandardowe raporty i zestawienia", description: "Tworzenie dedykowanych raportów pod specyficzne wymagania sprawozdawcze." },
+      { name: "Zaawansowana analityka i wykrywanie anomalii", description: "Szczegółowe raporty o nadwyżkach kosztów, nieprawidłowościach w deklaracjach, porzuconych odpadach z innych gmin." },
       { name: "Integracje z systemami JST", description: "Połączenie z systemami księgowymi, eBOK, ePUAP i innymi używanymi w urzędzie." },
       { name: "Dedykowane szkolenia dla zespołu", description: "Szkolenia on-site lub online dla administratorów, pracowników biurowych i ekip terenowych." },
       { name: "Priorytetowe wsparcie techniczne", description: "Skrócony czas reakcji na zgłoszenia i dedykowany opiekun klienta." },
