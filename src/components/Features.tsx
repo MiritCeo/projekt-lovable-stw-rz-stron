@@ -36,8 +36,8 @@ const features = [
   },
   {
     icon: FileBarChart,
-    title: "Raporty i eksporty",
-    description: "Gotowe zestawienia do sprawozdań, CSV i integracji z innymi systemami.",
+    title: "Analityka i kontrola",
+    description: "Wykrywanie anomalii, nadwyżek kosztów, analiza deklaracji i kontrola segregacji.",
   },
 ];
 

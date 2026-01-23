@@ -39,8 +39,8 @@ const allFeatures = [
   },
   {
     icon: FileText,
-    title: "Raporty JST",
-    description: "Eksporty do sprawozdań, zestawienia miesięczne i analizy odchyleń.",
+    title: "Raporty i analityka",
+    description: "Statystyki odpadów, wykrywanie anomalii na trasach, kontrola kosztów i segregacji.",
   },
   {
     icon: Shield,
