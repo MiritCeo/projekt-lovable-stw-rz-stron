@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Zap, Settings, Wrench } from "lucide-react";
+import { Check, Zap, Settings, Wrench, Brain, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -62,6 +62,24 @@ const plans = [
     cta: "Porozmawiajmy",
   },
 ];
+
+const aiAddon = {
+  name: "Moduł AI",
+  subtitle: "Opcjonalny dodatek do każdego pakietu",
+  description: "Modele sztucznej inteligencji szyte na miarę pod wymagania Twojej gminy",
+  icon: Brain,
+  features: [
+    { name: "Brak gotowych modeli AI", description: "Nie oferujemy gotowych, uniwersalnych rozwiązań. Każdy model AI jest projektowany i trenowany indywidualnie pod specyfikę Twojej gminy." },
+    { name: "Wykrywanie anomalii wagowych", description: "Model AI analizujący historyczne dane wagowe i identyfikujący nietypowe wzorce wskazujące na nieprawidłowości." },
+    { name: "Analiza wzorców deklaracji", description: "Automatyczne wykrywanie rozbieżności między deklaracjami a rzeczywistą produkcją odpadów." },
+    { name: "Predykcja wolumenów odpadów", description: "Prognozowanie ilości odpadów na podstawie historii, sezonowości i czynników zewnętrznych." },
+    { name: "Optymalizacja tras z ML", description: "Uczenie maszynowe do ciągłego doskonalenia tras na podstawie rzeczywistych danych operacyjnych." },
+    { name: "Identyfikacja podrzucania odpadów", description: "Algorytmy wykrywające odpady spoza obsługiwanego terenu na podstawie charakterystyki i lokalizacji." },
+    { name: "Automatyczna klasyfikacja zgłoszeń", description: "AI kategoryzujące i priorytetyzujące zgłoszenia od pracowników terenowych." },
+    { name: "Ciągłe doskonalenie modeli", description: "Regularne retrenowanie modeli na nowych danych, aby zwiększać skuteczność wykrywania." },
+  ] as Feature[],
+  cta: "Zapytaj o wdrożenie AI",
+};
 
 export function Pricing() {
   const scrollToContact = () => {
@@ -175,6 +193,80 @@ export function Pricing() {
               </motion.div>
             ))}
           </div>
+
+          {/* AI Addon Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-16 max-w-4xl mx-auto"
+          >
+            <Card className="border-2 border-dashed border-primary/30 bg-gradient-to-br from-accent/50 to-background overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-hero-gradient opacity-5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
+              <CardHeader className="text-center pb-6 relative">
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                    <Sparkles className="w-4 h-4" />
+                    Opcjonalny dodatek
+                  </span>
+                </div>
+                <div className="w-16 h-16 rounded-2xl mx-auto mb-4 bg-hero-gradient flex items-center justify-center">
+                  <aiAddon.icon className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <CardTitle className="text-3xl">{aiAddon.name}</CardTitle>
+                <CardDescription className="text-lg mt-2">
+                  {aiAddon.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="relative">
+                <div className="grid md:grid-cols-2 gap-4">
+                  {aiAddon.features.map((feature) => (
+                    <Tooltip key={feature.name}>
+                      <TooltipTrigger asChild>
+                        <div className="flex items-start gap-3 p-3 rounded-lg bg-background/50 hover:bg-background transition-colors cursor-help group">
+                          <Check className="w-5 h-5 text-success shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-200 text-sm">
+                            {feature.name}
+                          </span>
+                        </div>
+                      </TooltipTrigger>
+                      <TooltipContent 
+                        side="top" 
+                        className="max-w-xs bg-popover/95 backdrop-blur-sm border-border shadow-xl p-3"
+                        sideOffset={8}
+                      >
+                        <motion.p
+                          initial={{ opacity: 0, y: 5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="text-sm leading-relaxed"
+                        >
+                          {feature.description}
+                        </motion.p>
+                      </TooltipContent>
+                    </Tooltip>
+                  ))}
+                </div>
+                <div className="mt-8 p-4 rounded-lg bg-muted/50 border border-border">
+                  <p className="text-sm text-muted-foreground text-center">
+                    <Brain className="w-4 h-4 inline-block mr-2 text-primary" />
+                    Każdy model AI jest tworzony indywidualnie po analizie danych i procesów Twojej gminy. 
+                    Nie stosujemy gotowych rozwiązań – dopasowujemy algorytmy do Twoich unikalnych potrzeb.
+                  </p>
+                </div>
+              </CardContent>
+              <CardFooter className="pt-6 justify-center">
+                <Button 
+                  onClick={scrollToContact}
+                  className="bg-hero-gradient hover:opacity-90"
+                  size="lg"
+                >
+                  {aiAddon.cta}
+                </Button>
+              </CardFooter>
+            </Card>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0 }}
