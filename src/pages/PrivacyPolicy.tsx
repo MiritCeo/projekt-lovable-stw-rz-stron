@@ -1,8 +1,15 @@
+import { Link } from "react-router-dom";
+import { Header } from "@/components/Header";
+
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-12 space-y-8">
+      <Header />
+      <div className="container mx-auto px-4 py-28 space-y-8">
         <div className="space-y-2">
+          <Link to="/" className="text-sm text-primary hover:underline">
+            ← Powrót do strony głównej
+          </Link>
           <h1 className="text-3xl font-bold">Polityka prywatności</h1>
           <p className="text-muted-foreground">
             Dokument określa zasady przetwarzania danych osobowych i korzystania z serwisu

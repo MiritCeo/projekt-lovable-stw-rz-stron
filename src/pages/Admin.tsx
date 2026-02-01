@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { clearAuthToken, fetchLeads, getAuthToken, LeadStatus, updateLead } from "@/lib/leads";
+import { clearAuthToken, deleteLead, fetchLeads, getAuthToken, LeadStatus, updateLead } from "@/lib/leads";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 
@@ -78,6 +78,29 @@ export default function Admin() {
       return;
     }
     mutation.mutate({ id: selectedLead.id, status: draftStatus, notes: draftNotes });
+  };
+
+  const deleteMutation = useMutation({
+    mutationFn: (id: string) => deleteLead(id),
+    onSuccess: () => {
+      toast.success("Lead usunięty");
+      setSelectedId(null);
+      queryClient.invalidateQueries({ queryKey: ["leads"] });
+    },
+    onError: () => {
+      toast.error("Nie udało się usunąć leada");
+    },
+  });
+
+  const handleDelete = () => {
+    if (!selectedLead) {
+      return;
+    }
+    const confirmed = window.confirm("Czy na pewno usunąć tego leada? Tej operacji nie można cofnąć.");
+    if (!confirmed) {
+      return;
+    }
+    deleteMutation.mutate(selectedLead.id);
   };
 
   return (
@@ -223,7 +246,14 @@ export default function Admin() {
               />
             </div>
 
-            <div className="flex justify-end">
+            <div className="flex justify-end gap-3">
+              <button
+                onClick={handleDelete}
+                disabled={deleteMutation.isPending}
+                className="px-4 py-2 rounded-md border border-destructive/40 text-destructive text-sm font-medium hover:bg-destructive/10 disabled:opacity-60"
+              >
+                {deleteMutation.isPending ? "Usuwanie..." : "Usuń leada"}
+              </button>
               <button
                 onClick={handleSave}
                 disabled={mutation.isPending}

@@ -52,7 +52,7 @@ app.post("/api/leads", async (req, res) => {
       consent,
     } = req.body || {};
 
-    if (!name || !email || consent !== true) {
+    if (!name || !email || !phone || consent !== true) {
       return res.status(400).json({ error: "Invalid lead payload" });
     }
 
@@ -195,6 +195,24 @@ app.patch("/api/leads/:id", requireAuth, async (req, res) => {
   } catch (error) {
     console.error("Failed to update lead", error);
     res.status(500).json({ error: "Failed to update lead" });
+  }
+});
+
+app.delete("/api/leads/:id", requireAuth, async (req, res) => {
+  try {
+    const [result] = await pool.execute(
+      "DELETE FROM leads WHERE id = ?",
+      [req.params.id],
+    );
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Lead not found" });
+    }
+
+    res.json({ ok: true });
+  } catch (error) {
+    console.error("Failed to delete lead", error);
+    res.status(500).json({ error: "Failed to delete lead" });
   }
 });
 

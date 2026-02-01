@@ -154,6 +154,7 @@ export function Contact() {
                     name="phone"
                     type="tel"
                     placeholder="+48 123 456 789"
+                    required
                     className="mt-1.5"
                   />
                 </div>

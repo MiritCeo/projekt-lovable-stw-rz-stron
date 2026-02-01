@@ -1,8 +1,15 @@
+import { Link } from "react-router-dom";
+import { Header } from "@/components/Header";
+
 export default function Rodo() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-12 space-y-8">
+      <Header />
+      <div className="container mx-auto px-4 py-28 space-y-8">
         <div className="space-y-2">
+          <Link to="/" className="text-sm text-primary hover:underline">
+            ← Powrót do strony głównej
+          </Link>
           <h1 className="text-3xl font-bold">Informacja RODO</h1>
           <p className="text-muted-foreground">
             Klauzula informacyjna dotycząca przetwarzania danych osobowych w związku z
