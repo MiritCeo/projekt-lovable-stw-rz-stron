@@ -80,6 +80,7 @@ app.post("/api/leads", async (req, res) => {
 
     res.status(201).json({ id });
   } catch (error) {
+    console.error("Failed to create lead", error);
     res.status(500).json({ error: "Failed to create lead" });
   }
 });
@@ -122,6 +123,7 @@ app.get("/api/leads", requireAuth, async (req, res) => {
 
     res.json({ total: countRows[0].total, items: rows });
   } catch (error) {
+    console.error("Failed to fetch leads", error);
     res.status(500).json({ error: "Failed to fetch leads" });
   }
 });
@@ -142,6 +144,7 @@ app.get("/api/leads/:id", requireAuth, async (req, res) => {
 
     res.json(rows[0]);
   } catch (error) {
+    console.error("Failed to fetch lead", error);
     res.status(500).json({ error: "Failed to fetch lead" });
   }
 });
@@ -186,6 +189,7 @@ app.patch("/api/leads/:id", requireAuth, async (req, res) => {
 
     res.json({ ok: true });
   } catch (error) {
+    console.error("Failed to update lead", error);
     res.status(500).json({ error: "Failed to update lead" });
   }
 });
