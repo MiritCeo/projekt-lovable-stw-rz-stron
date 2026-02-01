@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
+import logo from "/logo.png";
 
 const footerLinks = [
   { href: "#funkcje", label: "Funkcje" },
   { href: "#funkcje-szczegoly", label: "Wszystkie funkcje" },
   { href: "#faq", label: "FAQ" },
   { href: "#kontakt", label: "Kontakt" },
+  { href: "/polityka-prywatnosci", label: "Polityka prywatności" },
+  { href: "/rodo", label: "RODO" },
 ];
 
 export function Footer() {
@@ -20,13 +23,13 @@ export function Footer() {
           {/* Brand */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-              <div className="w-8 h-8 rounded-lg bg-hero-gradient flex items-center justify-center text-primary-foreground font-bold text-sm">
-                WR
+              <div className="w-8 h-8 flex items-center justify-center overflow-hidden">
+                <img src={logo} alt="e-odpady.pl" className="w-full h-full object-contain" />
               </div>
-              <span className="font-semibold">Waste Route Manager</span>
+              <span className="font-semibold">e-odpady.pl</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Kontrola i analityka gospodarki odpadami.
+              System kontroli PSZOK.
             </p>
           </div>
 
@@ -45,7 +48,7 @@ export function Footer() {
 
           {/* Meta */}
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <span>© 2026 Waste Route Manager</span>
+            <span>© 2026 e-odpady.pl</span>
             <span>•</span>
             <span>Polska</span>
           </div>

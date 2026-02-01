@@ -5,21 +5,16 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Clock, Shield, FileCheck, Headphones } from "lucide-react";
+import { Phone, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
+import { createLead } from "@/lib/leads";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "kontakt@wasteroutemanager.pl" },
-  { icon: Phone, label: "Telefon", value: "+48 123 456 789" },
-  { icon: MapPin, label: "Adres", value: "ul. Przykładowa 12, 00-000 Warszawa" },
-  { icon: Clock, label: "Godziny", value: "pn-pt 8:00-16:00" },
+  { icon: Phone, label: "Telefon", value: "575 730 760" },
+  { icon: MapPin, label: "Adres", value: "ul. Edwarda Horoszkiewicza 1, 63-300 Pleszew" },
+  { icon: Clock, label: "Godziny", value: "pn-pt 9:00-16:00" },
 ];
 
-const trustBadges = [
-  { icon: FileCheck, label: "Umowa powierzenia danych" },
-  { icon: Shield, label: "Zgodność z RODO" },
-  { icon: Headphones, label: "Wsparcie SLA" },
-];
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -34,16 +29,30 @@ export function Contact() {
     }
 
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast.success("Dziękujemy! Odezwiemy się w ciągu 24 godzin roboczych.");
-    setIsSubmitting(false);
-    
-    // Reset form
-    (e.target as HTMLFormElement).reset();
-    setAgreed(false);
+
+    try {
+      const formData = new FormData(e.currentTarget);
+
+      await createLead({
+        source: "contact_form",
+        organization: String(formData.get("unit") || "").trim() || undefined,
+        name: String(formData.get("name") || "").trim(),
+        email: String(formData.get("email") || "").trim(),
+        phone: String(formData.get("phone") || "").trim() || undefined,
+        message: String(formData.get("message") || "").trim() || undefined,
+        consent: true,
+      });
+
+      toast.success("Dziękujemy! Odezwiemy się w ciągu 24 godzin roboczych.");
+
+      // Reset form
+      (e.target as HTMLFormElement).reset();
+      setAgreed(false);
+    } catch (error) {
+      toast.error("Nie udało się wysłać formularza. Spróbuj ponownie.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -88,18 +97,6 @@ export function Contact() {
               ))}
             </div>
 
-            {/* Trust Badges */}
-            <div className="flex flex-wrap gap-3">
-              {trustBadges.map((badge, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-sm"
-                >
-                  <badge.icon className="w-4 h-4 text-primary" />
-                  <span className="text-accent-foreground">{badge.label}</span>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
           {/* Contact Form */}
@@ -179,7 +176,15 @@ export function Contact() {
                     onCheckedChange={(checked) => setAgreed(checked as boolean)}
                   />
                   <Label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed">
-                    Wyrażam zgodę na kontakt w sprawie oferty zgodnie z polityką RODO.
+                    Wyrażam zgodę na kontakt w sprawie oferty zgodnie z{" "}
+                    <a href="/rodo" className="text-primary hover:underline">
+                      RODO
+                    </a>{" "}
+                    oraz{" "}
+                    <a href="/polityka-prywatnosci" className="text-primary hover:underline">
+                      polityką prywatności
+                    </a>
+                    .
                   </Label>
                 </div>
               </div>

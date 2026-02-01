@@ -76,10 +76,13 @@ export function Implementation() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="p-6 rounded-2xl bg-accent/50 border border-accent text-center"
+          className="p-6 rounded-2xl bg-accent/50 border border-accent text-center space-y-2"
         >
           <p className="text-lg font-medium text-accent-foreground">
             ⏱️ Standardowy czas wdrożenia: <strong>10-14 dni roboczych</strong>
+          </p>
+          <p className="text-sm text-accent-foreground/80">
+            Czas zależy od wymagań i zapotrzebowania klienta. Podany termin ma charakter szacunkowy dla standardowego wdrożenia.
           </p>
         </motion.div>
       </div>

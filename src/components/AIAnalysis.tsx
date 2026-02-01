@@ -83,6 +83,9 @@ const stats = [
   { icon: Brain, value: "<3s", label: "czas analizy punktu" },
 ];
 
+const statsDisclaimer =
+  "Dane ze statystyk to symulacja przygotowana na podstawie danych z przykładowych miast. Szczegółowe wyniki z wdrożeń nie mogą być udostępniane.";
+
 export function AIAnalysis() {
   return (
     <section id="analiza-ai" className="py-20 md:py-28 bg-background">
@@ -160,6 +163,9 @@ export function AIAnalysis() {
             </div>
           ))}
         </motion.div>
+        <p className="text-xs text-muted-foreground text-center mb-16">
+          {statsDisclaimer}
+        </p>
 
         {/* Example Alerts */}
         <motion.div

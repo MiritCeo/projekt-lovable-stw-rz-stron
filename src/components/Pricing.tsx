@@ -21,7 +21,7 @@ const plans = [
       { name: "Planowanie tras", description: "Automatyczne tworzenie optymalnych tras dla pojazdów z uwzględnieniem pojemności i lokalizacji." },
       { name: "Raporty i analityka odpadów", description: "Statystyki zbiórki, wykrywanie anomalii na trasach, kontrola kosztów segregacji i identyfikacja nieprawidłowości." },
       { name: "Panel administratora", description: "Centralny kokpit z podglądem kluczowych wskaźników, alertów i statusów realizacji." },
-      { name: "Aplikacja mobilna dla pracowników", description: "Dedykowana aplikacja na tablet/telefon do potwierdzania odbiorów i zgłaszania uwag w terenie." },
+      { name: "Responsywna aplikacja webowa", description: "Interfejs dostosowany do tabletów i telefonów, aby wygodnie potwierdzać odbiory i zgłaszać uwagi w terenie bez dedykowanej aplikacji." },
       { name: "Import danych z Radix", description: "Automatyczne mapowanie i import danych z popularnego systemu Radix używanego przez wiele gmin." },
       { name: "Wsparcie techniczne 8/5", description: "Pomoc techniczna dostępna w dni robocze od 8:00 do 16:00 przez telefon i email." },
     ] as Feature[],
@@ -69,7 +69,7 @@ const aiAddon = {
   description: "Modele sztucznej inteligencji szyte na miarę pod wymagania Twojej gminy",
   icon: Brain,
   features: [
-    { name: "Brak gotowych modeli AI", description: "Nie oferujemy gotowych, uniwersalnych rozwiązań. Każdy model AI jest projektowany i trenowany indywidualnie pod specyfikę Twojej gminy." },
+    { name: "Modele AI dopasowane do potrzeb", description: "Dysponujemy gotowymi modelami dla standardowych wdrożeń, a dla bardziej wymagających klientów tworzymy nowe modele dopasowane do specyfiki organizacji." },
     { name: "Wykrywanie anomalii wagowych", description: "Model AI analizujący historyczne dane wagowe i identyfikujący nietypowe wzorce wskazujące na nieprawidłowości." },
     { name: "Analiza wzorców deklaracji", description: "Automatyczne wykrywanie rozbieżności między deklaracjami a rzeczywistą produkcją odpadów." },
     { name: "Predykcja wolumenów odpadów", description: "Prognozowanie ilości odpadów na podstawie historii, sezonowości i czynników zewnętrznych." },

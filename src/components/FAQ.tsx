@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "Czy aplikacja działa na tabletach w terenie?",
-    answer: "Tak, interfejs jest w pełni responsywny i przystosowany do pracy mobilnej. Pracownicy mogą oznaczać odbiory bezpośrednio w terenie.",
+    answer: "Tak, interfejs jest w pełni responsywny i przystosowany do pracy mobilnej w przeglądarce. Nie wymagamy dedykowanej aplikacji mobilnej.",
   },
   {
     question: "Czy można dostosować moduły do specyfiki gminy?",

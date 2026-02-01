@@ -11,6 +11,7 @@ import { Implementation } from "@/components/Implementation";
 import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { LeadWidget } from "@/components/LeadWidget";
 
 const Index = () => {
   return (
@@ -30,6 +31,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <LeadWidget />
     </div>
   );
 };

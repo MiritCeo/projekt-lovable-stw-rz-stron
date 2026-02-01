@@ -12,7 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const caseStudies = [
   {
     title: "Wykrycie nielegalnego podrzucania odpadów",
-    location: "Przedsiębiorstwo Komunalne w Wielkopolsce",
+    location: "PSZOK 1",
     period: "6 miesięcy analizy",
     problem: "Nagły wzrost ilości odpadów zmieszanych w 3 punktach odbioru przekraczający deklaracje mieszkańców o 40%.",
     solution: "System wykrył anomalię na podstawie porównania deklaracji z rzeczywistą wagą odbieranych odpadów. Analiza tras wykazała wzorzec – nadwyżki pojawiały się w poniedziałki po weekendach.",
@@ -24,7 +24,7 @@ const caseStudies = [
   },
   {
     title: "Optymalizacja tras i redukcja kosztów paliwa",
-    location: "Zakład Gospodarki Komunalnej w Małopolsce",
+    location: "PSZOK 2",
     period: "3 miesiące wdrożenia",
     problem: "Nieefektywne trasy odbioru powodowały nadmierne zużycie paliwa i opóźnienia w harmonogramach.",
     solution: "Analiza danych GPS i czasów przejazdu pozwoliła na reorganizację 8 tras. System zasugerował zmianę kolejności punktów i eliminację zbędnych przejazdów.",
@@ -36,7 +36,7 @@ const caseStudies = [
   },
   {
     title: "Uszczelnienie systemu deklaracji śmieciowych",
-    location: "Gminna Spółka Komunalna na Śląsku",
+    location: "PSZOK 3",
     period: "12 miesięcy monitoringu",
     problem: "Rozbieżności między zadeklarowaną liczbą osób w gospodarstwach a rzeczywistą ilością generowanych odpadów.",
     solution: "Algorytm porównujący średnią produkcję odpadów na osobę z deklaracjami. Flagowanie gospodarstw z nietypowo niskimi deklaracjami przy wysokiej produkcji odpadów.",

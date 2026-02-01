@@ -7,13 +7,11 @@ const badges = [
   { icon: Shield, label: "Bezpieczne dane" },
   { icon: Download, label: "Import Radix" },
   { icon: Clock, label: "Wdrożenie 14 dni" },
-  { icon: Headphones, label: "Wsparcie PL" },
 ];
 
 const useCases = [
   "Planowanie tras i harmonogramów odbioru",
   "Kontrola realizacji zleceń i reklamacji",
-  "Raporty do sprawozdań gminnych",
   "Ewidencja pojemników i deklaracji",
 ];
 
@@ -45,9 +43,9 @@ export function Hero() {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
-              Waste Route Manager łączy dane o nieruchomościach, pojemnikach i
-              harmonogramach w spójnym systemie. Twórz trasy, monitoruj realizację
-              odbiorów i generuj raporty bez chaosu w arkuszach.
+              e-odpady.pl to system kontroli PSZOK, który łączy dane o nieruchomościach,
+              pojemnikach i harmonogramach w spójnym systemie. Twórz trasy, monitoruj
+              realizację odbiorów i generuj raporty bez chaosu w arkuszach.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
