@@ -105,6 +105,10 @@ app.get("/api/leads", requireAuth, async (req, res) => {
     }
 
     const whereClause = where.length ? `WHERE ${where.join(" AND ")}` : "";
+    const parsedLimit = Number.parseInt(String(limit), 10);
+    const parsedOffset = Number.parseInt(String(offset), 10);
+    const safeLimit = Number.isFinite(parsedLimit) ? Math.min(Math.max(parsedLimit, 1), 100) : 25;
+    const safeOffset = Number.isFinite(parsedOffset) ? Math.max(parsedOffset, 0) : 0;
 
     const [countRows] = await pool.execute(
       `SELECT COUNT(*) as total FROM leads ${whereClause}`,
@@ -117,8 +121,8 @@ app.get("/api/leads", requireAuth, async (req, res) => {
        FROM leads
        ${whereClause}
        ORDER BY created_at DESC
-       LIMIT ? OFFSET ?`,
-      [...params, Number(limit), Number(offset)],
+       LIMIT ${safeLimit} OFFSET ${safeOffset}`,
+      params,
     );
 
     res.json({ total: countRows[0].total, items: rows });
