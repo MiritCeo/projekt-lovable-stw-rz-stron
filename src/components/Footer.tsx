@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logo from "/logo.png";
+import logo from "/logo.svg";
 
 const footerLinks = [
   { href: "#funkcje", label: "Funkcje" },
